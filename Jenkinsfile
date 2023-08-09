@@ -1,10 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('Deploying dotnet container to Kubernetes') {
+    stage('Deploying to Kubernetes') {
       steps {
         script {
-          kubernetesDeploy(configs: "dep1.yaml", "serv1.yaml")
+          kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
         }
       }
     }
